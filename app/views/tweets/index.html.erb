@@ -1,0 +1,17 @@
+<h1>List of tweets</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>Content</th>
+  </tr>
+  <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet.content %></td>
+      <td><%= link_to 'Edit this tweet', edit_tweet_path(tweet.id) %></td>
+      <td><%= link_to 'Delete this tweet', tweet_path(tweet.id), method: :delete ,data: { confirm: 'Are you sure to delete this?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'New tweet', new_tweet_path %>
+<p>Find me in app/views/tweet/index.html.erb</p>
